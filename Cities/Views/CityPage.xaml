@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Cities.Views.CityPage"
+             xmlns:local="clr-namespace:Cities.Utils"
+             Title="City">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Margin="20">
+                <StackLayout Orientation="Horizontal">
+                    <ImageButton x:Name="Avatar" 
+                           WidthRequest="100" 
+                           HeightRequest="100" 
+                           HorizontalOptions="FillAndExpand" 
+                            VerticalOptions="FillAndExpand" 
+                           Source="{Binding Avatar}"
+                           Clicked="OnImageClick"
+                           BackgroundColor="Transparent"
+                          />
+                    <StackLayout Orientation="Vertical" WidthRequest="150" Padding="10" >
+                        <Label Text="{local:Translate Name}"/>
+                        <Entry Text="{Binding Name}"/>
+                        <Label Text="{local:Translate Country}"/>
+                        <Entry Text="{Binding Country}"/>
+                    </StackLayout>
+                </StackLayout>
+                <Button Text="{local:Translate Add}" Command="{Binding AddImageCommand}"/>
+                <StackLayout Orientation="Horizontal">
+                    <StackLayout Orientation="Vertical" WidthRequest="150">
+                        <Label Text="{local:Translate Population}" />
+                        <Entry Text="{Binding Population}"  />
+                        <Label Text="{local:Translate Latitude}"/>
+                        <Entry Text="{Binding Latitude}"/>
+                    </StackLayout>
+                    <StackLayout WidthRequest="150">
+                        <Label Text="{local:Translate Year}" />
+                        <Entry Text="{Binding Year}"  />
+                        <Label Text="{local:Translate Longitude}"/>
+                        <Entry Text="{Binding Longitude}"/>
+                    </StackLayout>
+                </StackLayout>
+                <Label Text="{local:Translate Mail}"/>
+                <Entry Text="{Binding Mail}" IsEnabled="False"/>
+                <StackLayout Orientation="Horizontal" >
+                    <Label Text="{local:Translate Capital}"/>
+                    <Switch IsToggled="{Binding Capital}"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Button Text="Add video" Command="{Binding AddVideoCommand}"/>
+                    <Button Text="Video" Command="{Binding ShowVideoCommand}" IsEnabled="{Binding HasVideo}"/>
+                </StackLayout>
+                <Button Text="{local:Translate Map}" Clicked="OnMapClick"/>
+                <Button Text="{local:Translate Save}" CornerRadius="6" BackgroundColor="BlueViolet" Command="{Binding SaveCommand}"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

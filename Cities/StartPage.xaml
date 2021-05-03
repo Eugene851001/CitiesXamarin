@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Cities.Utils;assembly=Cities"
+             x:Class="Cities.StartPage">
+    <ContentPage.Content>
+        <RelativeLayout>
+            <Entry x:Name="edMail"  
+                   RelativeLayout.XConstraint = "{ConstraintExpression 
+                        Type=RelativeToParent,
+                        Property=Width, 
+                        Factor=0.5, 
+                        Constant=-100}" Text="{Binding Mail}" 
+                   RelativeLayout.YConstraint = "{ConstraintExpression 
+                        Type=RelativeToParent, 
+                        Property=Height, 
+                        Factor=0.5, 
+                        Constant=-150}" 
+                   WidthRequest="200"
+             Placeholder="Mail"/>
+            <Entry x:Name="edPassword"
+                   RelativeLayout.XConstraint = "{ConstraintExpression
+                        Type=RelativeToView,
+                        ElementName=edMail,
+                        Property=X,
+                        Factor=1,
+                        Constant=0
+                    }"
+                   RelativeLayout.YConstraint="{ConstraintExpression
+                        Type=RelativeToView,
+                        ElementName=edMail,
+                        Property=Y,
+                        Factor=1,
+                        Constant=50
+                    }"
+                   RelativeLayout.WidthConstraint="{ConstraintExpression
+                        Type=RelativeToView,
+                        ElementName=edMail,
+                        Property=Width
+                    }"
+                   Text="{Binding Password}" Placeholder="Password" />
+            <Button x:Name="btLogin"
+                   RelativeLayout.XConstraint = "{ConstraintExpression
+                        Type=RelativeToView,
+                        ElementName=edMail,
+                        Property=X,
+                        Factor=1,
+                        Constant=0
+                    }"
+                    RelativeLayout.YConstraint="{ConstraintExpression
+                        Type=RelativeToView,
+                        ElementName=edPassword,
+                        Property=Y,
+                        Factor=1,
+                        Constant=50
+                    }"
+                    RelativeLayout.WidthConstraint="{ConstraintExpression
+                        Type=RelativeToView,
+                        ElementName=edMail,
+                        Property=Width
+                    }"
+                    CornerRadius="6"
+                    BackgroundColor="BlueViolet"
+                    Text="{local:Translate SignIn}" Clicked="onLoginButtonClicked"/>
+            <Button x:Name="btRegistration" 
+                    RelativeLayout.XConstraint = "{ConstraintExpression
+                        Type=RelativeToView,
+                        ElementName=edMail,
+                        Property=X,
+                        Factor=1,
+                        Constant=0
+                    }"
+                    RelativeLayout.YConstraint="{ConstraintExpression
+                        Type=RelativeToView,
+                        ElementName=btLogin,
+                        Property=Y,
+                        Factor=1,
+                        Constant=50
+                    }"
+                    RelativeLayout.WidthConstraint="{ConstraintExpression
+                        Type=RelativeToView,
+                        ElementName=edMail,
+                        Property=Width
+                    }"
+                    CornerRadius="6"
+                    BackgroundColor="Orange"
+                    Text="{local:Translate SignUp}" Clicked="onRegistrationButtonClicked"/>
+        </RelativeLayout>
+    </ContentPage.Content>
+</ContentPage>

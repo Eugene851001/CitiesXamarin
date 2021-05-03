@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Cities.Views.FilterPage"
+             xmlns:local="clr-namespace:Cities.Utils;assembly=Cities">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" Margin="20" Spacing="50">
+            <StackLayout Orientation="Horizontal" >
+                <StackLayout Orientation="Vertical" WidthRequest="200" Spacing="20">
+                    <Label Text="{local:Translate Name}"/>
+                    <Entry Text="{Binding Name}"/>
+                    <Label Text="{local:Translate MinYear}"/>
+                    <Entry Text="{Binding MinYear}"/>
+                    <Label Text="{local:Translate MinPopulation}"/>
+                    <Entry Text="{Binding MinPopulation}"/>
+                   
+                </StackLayout>
+                <StackLayout Orientation="Vertical" WidthRequest="200" Spacing="20">
+                    <Label Text="{local:Translate Country}"/>
+                    <Entry Text="{Binding Country}"/>
+                    <Label Text="{local:Translate MaxYear}"/>
+                    <Entry Text="{Binding MaxYear}"/>
+                    <Label Text="{local:Translate MaxPopulation}"/>
+                    <Entry Text="{Binding MaxPopulation}"/>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                <Label Text="{local:Translate Capital}"/>
+                <Switch IsToggled="{Binding Capital}"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Button Text="{local:Translate Set}" Clicked="onSetButtonClick"/>
+                <Button Text="{local:Translate Reset}" Clicked="onResetButtonClick"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Cities.Views.GalleryPage"
+             Title="Gallery">
+    <ContentPage.Content>
+        <CollectionView ItemsSource="{Binding Images}"
+                ItemsLayout="VerticalGrid, 3">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="100" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100" />
+                        </Grid.ColumnDefinitions>
+                        <ImageButton
+                       Source="{Binding ImageUrl}"
+                       Aspect="Fill"
+                       Clicked="OnImageClick"
+                       HeightRequest="150"
+                       WidthRequest="150"
+                       CornerRadius="6"/>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </ContentPage.Content>
+</ContentPage>

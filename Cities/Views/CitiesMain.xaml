@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Cities;assembly=Cities"
+            xmlns:local2="clr-namespace:Cities.Views;assembly=Cities"
+             x:Class="Cities.Views.CitiesMain"
+            BarBackgroundColor="{Binding Color}"
+            Title="Cities"
+            >
+  <!--Pages can be added as references or inline-->
+    <local:CitiesList Title="Cities" IconImageSource="home.png"></local:CitiesList>
+    <local2:MapPage Title="Map" IconImageSource="map.png"></local2:MapPage>
+    <local2:SettingPage Title="Settings" IconImageSource="settings.png"></local2:SettingPage>
+</TabbedPage>

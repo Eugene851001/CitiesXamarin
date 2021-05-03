@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Cities.Views;assembly=Cities"
+             xmlns:local2="clr-namespace:Cities.Utils;assembly=Cities"
+             x:Class="Cities.CitiesList"
+             Title="Cities">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Orientation="Horizontal" Margin="20, 0, 0, 0">
+                <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand">
+                    <Label Text="{local2:Translate CurentCity}" FontSize="18"/>
+                    <Label Text="{Binding CurrentName}" FontSize="18"/>
+                </StackLayout>
+                <Button Text="{local2:Translate Filter}" HorizontalOptions="EndAndExpand" Command="{Binding FilterCommand}"/>
+            </StackLayout>
+            <ListView x:Name="lvCities" RowHeight="100" ItemsSource="{Binding Cities, Mode=TwoWay}" ItemTapped="onCityItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <local:CityCell Avatar="{Binding Avatar}" Name="{Binding Name, Mode=TwoWay}" Country="{Binding Country, Mode=TwoWay}" Capital="{Binding Capital, Mode=TwoWay}"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

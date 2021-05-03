@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xct="clr-namespace:Xamarin.CommunityToolkit.UI.Views;assembly=Xamarin.CommunityToolkit"
+             x:Class="Cities.Views.VideoPlayerPage">
+    <ContentPage.Content>
+        <xct:MediaElement Source="{Binding VideoUrl}" 
+                          ShowsPlaybackControls="True" 
+                          HorizontalOptions="FillAndExpand"
+                          VerticalOptions="FillAndExpand"/>
+    </ContentPage.Content>
+</ContentPage>

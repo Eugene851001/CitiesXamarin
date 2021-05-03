@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Cities.RegistrationPage"
+             Title="Registration"
+             xmlns:local="clr-namespace:Cities.Utils;assembly=Cities">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Margin="20">
+                <Label Text="{local:Translate Mail}"/>
+                <Entry Text="{Binding Mail}" Placeholder="city@mail.ru"/>
+                <Label Text="{local:Translate Password}"/>
+                <Entry Text="{Binding Password}" Placeholder="password"/>
+                <StackLayout Orientation="Horizontal">
+                    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                        <Label Text="{local:Translate Name}"/>
+                        <Entry Text ="{Binding Name}" Placeholder="Name"/>
+                        <Label Text="{local:Translate Population}"/>
+                        <Entry Text="{Binding Population}" Placeholder="9670000"/>
+                        <Label Text="{local:Translate Latitude}"/>
+                        <Entry Text="{Binding Latitude}" Placeholder="0.0"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                        <Label Text="{local:Translate Country}"/>
+                        <Entry Text="{Binding Country}"  Placeholder="Country"/>
+                        <Label Text="{local:Translate Year}"/>
+                        <Entry Text="{Binding Year}" Placeholder="1970"/>
+                        <Label Text="{local:Translate Longitude}"/>
+                        <Entry Text="{Binding Longitude}" Placeholder="0.0"/>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
+                    <Label Text="{local:Translate Capital}"/>
+                    <Switch IsToggled="{Binding Capital}"/>
+                </StackLayout>
+                <Button Text="{local:Translate Registrate}" CornerRadius="6" BackgroundColor="Bisque" Clicked="onRegistrateButtonClicked"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
